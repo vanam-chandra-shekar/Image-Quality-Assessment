@@ -1,0 +1,25 @@
+# Ignore virtual environments
+venv/
+venv1/
+venv2/
+
+# Ignore image folders
+imagesOrg/
+imagesReZ/
+
+# Ignore large or generated datasets
+*.csv
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+
+*.pkl

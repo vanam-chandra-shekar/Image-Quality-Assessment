@@ -1,0 +1,16 @@
+# Core Scientific Libraries
+numpy==1.24.4
+scikit-learn==1.3.2
+joblib==1.3.2
+
+# Image Processing
+opencv-python==4.9.0.80
+scikit-image==0.22.0
+Pillow==10.3.0
+tensorflow
+
+# Visualization (optional but useful for EDA)
+matplotlib==3.8.4
+
+# Jupyter Notebook (optional for interactive training)
+notebook==7.1.2

@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Rohitsontamu/Image-Quality-Assessment', branch: 'main'
+            }
+        }
+
+        stage('Install Requirements') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'pytest tests/'  // or your test script
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t myapp .'
+            }
+        }
+
+        stage('Deploy (Local)') {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Pipeline completed successfully!"
+        }
+        failure {
+            echo "Something went wrong in the pipeline."
+        }
+    }
+}
